@@ -7,7 +7,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 $email=$data["email"];
 
 
-$sql_query = "SELECT * FROM user WHERE email='$email'";
+$sql_query = "SELECT * FROM user_info WHERE email='$email'";
 
 
 $result = mysqli_query($conn,$sql_query);  
