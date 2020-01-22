@@ -1,13 +1,13 @@
 <?php 
   //include "header.php";
   //include "menu.php";
-  $sql    = "SELECT * FROM Admin";
-  $conn =  mysqli_connect("localhost", "root", "", "junketdb");
+  $sql    = "SELECT * FROM admin";
+  $conn= mysqli_connect("localhost", "root", "", "junketdb");
   $result = mysqli_query($conn,$sql);
   
   // Auto Increment Serial No variable.
   $count  = 0;
-
+  
   
   // Delete Query If click the delete button then check using isset() method.
   if (isset($_REQUEST['del']))
@@ -15,26 +15,38 @@
     $delete1="DELETE FROM admin WHERE  
     admin_id='".$_REQUEST['del']."' " ;
     $del_resut1 = mysqli_query($conn,$delete1);
-?>*/
 
- /* <script type="text/javascript">window.location.href="admin_view.php"</script>
+
+?>
+  <script type="text/javascript">window.location.href="admin_view.php"</script>
 <?php
   }
+  
 ?>
 
-
+  
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
             <div class="row ">
-                       
-                  <table border class="table table-hover" >
+                        <!--CUSTOM CHART START -->
+                        <!--
+                        <div class="border-head">
+                <h2><i class="fa fa-table fa-lg"></i> Category Master </h2>
+              </div><hr>
+              <a class="btn btn-info btn-md" href="category_add.php"> Add New Category</a><br>
+              <div class="custom-bar-chart">
+                <div class="table-responsive">
+                      -->
+
+
+                  <table class="table table-hover" border="5">
                   <tr style="color:blue">
                     <th>Serial No</th>
                     <th>Admin ID</th>
-                    <th>Admin Name</th>
+                    <th> Admin Name</th>
                     <th>Action</th>
-                   
+                    
 
                   </tr>
                   <?php 
@@ -47,14 +59,22 @@
                     <td><?php echo $rows['admin_name']; ?></td>
                     
                     <td>
-                      <!--<a class='btn btn-primary' href="admin_update.php?edit=<?php echo $rows['admin_id']; ?>">Edit</a>-->
+                      <a class='btn btn-primary' href="#">Edit</a>
                       <a class='btn btn-danger' href="admin_view.php?del=<?php echo $rows['admin_id']; ?>">Delete</a>
-                      
-                      
                     </td>
                   </tr>
                   <?php } ?>
                   </table>
 
-                
-                
+                  <!--
+                </div> 
+              </div> -->
+                        <!--custom chart end-->
+            </div><!-- /row  
+          </section>
+      </section>
+      <br>
+    -->
+
+      <!--main content end-->
+      <!--footer start-->

@@ -7,12 +7,12 @@ $data= json_decode(file_get_contents('php://input'),
 
 
 $user_password      = $data["user_password"];
-$user_id	= $data["user_id"];
+$user_id	=$data["user_id"];
 
 
 $output     = array();
 
-$sql_query = "UPDATE user SET user_password = '".$user_password."' WHERE user_id = '".$user_id."'";
+$sql_query = "UPDATE user_info SET user_password = '".$user_password."' WHERE user_id = '".$user_id."'";
 
 		
 

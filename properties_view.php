@@ -21,6 +21,15 @@
   <script type="text/javascript">window.location.href="properties_view.php"</script>
 <?php
   }
+
+  if(isset($_REQUEST['edit']))
+  {
+     //Edit Query if click the edit buttob then check using isset() method !
+    $ed1="UPDATE questionnaire where 
+    qid='".$_REQUEST['edit']."'";
+    $edit_result=mysqli_query($conn,$ed1);
+  
+  }
   
 ?>
 
@@ -80,10 +89,8 @@
 
 
                     <td>
-                     <!--<a class='btn btn-primary' href="category_update.php?edit=<?php echo $rows['catid']; ?>">Edit</a>-->
+                      <a class='btn btn-primary' href="edit_properties.php?property_id<=?php <?php echo $rows['property_id'] ?>">Edit</a>
                       <a class='btn btn-danger' href="properties_view.php?del=<?php echo $rows['property_id']; ?>">Delete</a>
-                      
-                      
                     </td>
                   </tr>
                   <?php } ?>

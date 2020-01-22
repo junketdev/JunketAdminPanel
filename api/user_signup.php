@@ -26,7 +26,7 @@ if (mysqli_num_rows($res) > 0) {
     }
          else {
 
-		$sql_query = "INSERT INTO user_info(user_name, user_password, email, contact_no, dob, gender, profile_pic ) VALUES('".$user_name."','".$user_password."','".$email."','".$contact_no."','".$dob."','".$gender."','".$profile_pic."')";
+		$sql_query = "INSERT INTO user_info(user_name, user_password, email, contact_no, dob, gender, profile_pic) VALUES('".$user_name."','".$user_password."','".$email."','".$contact_no."', '".$dob."', '".$gender."', '".$profile_pic."')";
 		if(mysqli_query($conn,$sql_query))
 		{
 			$output["response"]=1;

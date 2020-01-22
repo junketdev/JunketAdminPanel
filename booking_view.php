@@ -21,6 +21,7 @@
   <script type="text/javascript">window.location.href="booking_view.php"</script>
 <?php
   }
+  
 ?>
 
   
@@ -66,11 +67,8 @@
                     <td><?php echo $rows['remarks']; ?></td>
 
                     <td>
-                      
-                      <!--<a class='btn btn-primary' href="category_update.php?edit=<?php echo $rows['catid']; ?>">Edit</a>-->
+                      <a class='btn btn-primary' href="#">Edit</a>
                       <a class='btn btn-danger' href="booking_view.php?del=<?php echo $rows['booking_id']; ?>">Delete</a>
-                      
-                      
                     </td>
                   </tr>
                   <?php } ?>

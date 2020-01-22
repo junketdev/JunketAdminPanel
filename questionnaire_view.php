@@ -21,6 +21,17 @@
   <script type="text/javascript">window.location.href="questionnaire_view.php"</script>
 <?php
   }
+
+  //Edit Query if click the edit buttob then check using isset() method !
+  if (isset($_REQUEST['edit'])) 
+  {
+    # code...
+    $ed1="UPDATE questionnaire where 
+    qid='".$_REQUEST['edit']."'";
+    $edit_result=mysqli_query($conn,$ed1);
+  }
+
+
   
 ?>
 
@@ -59,7 +70,7 @@
                   ?>
                   <tr>
                     <td><?php echo ++$count; ?></td>
-                    <td><?php echo $rows['qid']; ?></td>
+                    <td><?php echo $rows['qid']; ?></td>    
                     <td><?php echo $rows['question']; ?></td>
                     <td><?php echo $rows['option1']; ?></td>
                     <td><?php echo $rows['option2']; ?></td>
@@ -67,10 +78,8 @@
                     <td><?php echo $rows['option4']; ?></td>
 
                     <td>
-                      <!--<a class='btn btn-primary' href="category_update.php?edit=<?php echo $rows['catid']; ?>">Edit</a>-->
+                      <a class='btn btn-primary' href="edit_questionnaire.php?qid=<?php echo $rows['qid']; ?>">Edit</a>
                       <a class='btn btn-danger' href="questionnaire_view.php?del=<?php echo $rows['qid']; ?>">Delete</a>
-                      
-                      
                     </td>
                   </tr>
                   <?php } ?>
