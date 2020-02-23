@@ -1,24 +1,25 @@
 <?php 
   //include "header.php";
   //include "menu.php";
-  $sql    = "SELECT * FROM user_info";
+  $hotel_id = "230";
+  $sql    = "SELECT * FROM inquiry where hotel_id = '" . $hotel_id . "'" ;
   $conn= mysqli_connect("localhost", "root", "", "junketdb");
   $result = mysqli_query($conn,$sql);
   
   // Auto Increment Serial No variable.
-  $count  = 1;
+  $count  = 1   ;
   
   
   // Delete Query If click the delete button then check using isset() method.
   if (isset($_REQUEST['del']))
   {
-    $delete1="DELETE FROM user_info WHERE  
-    user_id='".$_REQUEST['del']."' " ;
+    $delete1="DELETE FROM inquiry WHERE  
+    inquiry_id='".$_REQUEST['del']."' " ;
     $del_resut1 = mysqli_query($conn,$delete1);
 
 
 ?>
-  <script type="text/javascript">window.location.href="user_details_view.php"</script>
+  <script type="text/javascript">window.location.href="inquirydetails.php"</script>
 <?php
   }
   
@@ -38,36 +39,47 @@
               <div class="custom-bar-chart">
                 <div class="table-responsive">
                       -->
-
+                  <H1> INQUIRY DETAILS : </H1>
 
                   <table class="table table-hover" border="5">
                   <tr style="color:blue">
-                    <th>Serial No</th>
-                    <th>User Id</th>
-                    <th>User Name</th>
-                    <th>Gender</th>
-                    <th>Date Of Birth</th>
-                    <th>Profile <PICTURE></PICTURE></th>
-                    <th>Action</th>
-                    
+                
 
+                    <th>Inquiry Id</th>
+                    <th>Inquiry Date </th>
+                    <th>User Id</th>    
+                    <th> Hotel Id </th>
+                    <th>Inquiry Details</th>
+                    
                   </tr>
+                  
                   <?php 
                     //Fetch all data using this function in while loop.
                     while ($rows=mysqli_fetch_array($result,MYSQLI_BOTH)) {
                   ?>
                   <tr>
-                    <td><?php echo ++$count; ?></td>
+                    <td><?php echo $rows['inquiry_id']; ?></td>
+
+                    <td><?php echo $rows['inquiry_date']; ?></td>
+                    
                     <td><?php echo $rows['user_id']; ?></td>
-                    <td><?php echo $rows['user_name']; ?></td>
-                    <td><?php echo $rows['gender']; ?></td>
-                    <td><?php echo $rows['dob']; ?></td>
-                    <td><?php echo $rows['profile_pic']; ?></td>
+
+                    <td><?php echo $rows['hotel_id']; ?></td>
+
+                    <td><?php echo $rows['inquiry_details']; ?></td>
+                    <!--
+                    <td><?php echo $rows
+                    ['remarks']; ?></td>
+                    
+-->
+
+
+
 
 
                     <td>
-                      <a class='btn btn-primary' href="#">Edit</a>
-                      <a class='btn btn-danger' href="user_details_view.php?del=<?php echo $rows['user_id']; ?>">Delete</a>
+                     
+                      <a class='btn btn-danger' href="bookingdetails.php?del=<?php echo $rows['inquiry_id']; ?>">Delete</a>
                     </td>
                   </tr>
                   <?php } ?>

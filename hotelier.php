@@ -12,23 +12,14 @@
   // Delete Query If click the delete button then check using isset() method.
   if (isset($_REQUEST['del']))
   {
-    $delete1="DELETE FROM properties WHERE  
-    property_id='".$_REQUEST['del']."' " ;
+    $delete1="DELETE FROM hotelier WHERE  
+    hotelier_id='".$_REQUEST['del']."' " ;
     $del_resut1 = mysqli_query($conn,$delete1);
 
 
 ?>
-  <script type="text/javascript">window.location.href="properties_view.php"</script>
+  <script type="text/javascript">window.location.href="hotelier.php"</script>
 <?php
-  }
-
-  if(isset($_REQUEST['edit']))
-  {
-     //Edit Query if click the edit buttob then check using isset() method !
-    $ed1="UPDATE questionnaire where 
-    qid='".$_REQUEST['edit']."'";
-    $edit_result=mysqli_query($conn,$ed1);
-  
   }
   
 ?>
@@ -48,23 +39,28 @@
                 <div class="table-responsive">
                       -->
 
-
+                  <H1> Hotelier Details :</H1>
                   <table class="table table-hover" border="5">
                   <tr style="color:blue">
-                    <th>Serial No</th>
-                    <th>Property Id</th>
-                    <th>Property Name</th>
-                    <th>Property Type</th>
+                    
+                    <th>Hotelier Id</th>
+                    <th>Hotelier Name</th>
+                    <th>Hotelier Type</th>
                     <th>City</th>
+                    <th>Hotelier Address</th>
                     <th>Longitude</th>
                     <th>Latitude</th>
                     <th>Description</th>
                     <th>Contact No</th>
-                    <th>Email</th>
+                    <th>Hotelier Email</th>
                     <th>Rating</th>
                     <th>Amenities</th>
                     <th>Offers</th>
                     <th>Images</th>
+                    <th>Website</th>
+                    <th>Min_price</th>
+                    <th>Max_price</th>
+                    
 
                   </tr>
                   <?php 
@@ -72,25 +68,33 @@
                     while ($rows=mysqli_fetch_array($result,MYSQLI_BOTH)) {
                   ?>
                   <tr>
-                    <td><?php echo ++$count; ?></td>
-                    <td><?php echo $rows['property_id']; ?></td>
-                    <td><?php echo $rows['property_name']; ?></td>
-                    <td><?php echo $rows['property_type']; ?></td>
-                    <td><?php echo $rows['city']; ?></td>
+                    <td><?php echo $rows['hotel_id']; ?></td>
+                    <td><?php echo $rows['hotelier_name']; ?></td>
+                    <td><?php echo $rows['hotelier_type']; ?></td>
+                    <td><?php echo $rows
+                    ['city']; ?></td>
+                    <td><?php echo $rows['hotelier_address']; ?></td>
                     <td><?php echo $rows['longitude']; ?></td>
                     <td><?php echo $rows['latitude']; ?></td>
                     <td><?php echo $rows['description']; ?></td>
                     <td><?php echo $rows['contact']; ?></td>
-                    <td><?php echo $rows['email']; ?></td>
+                    <td><?php echo $rows['hotelier_email']; ?></td>
                     <td><?php echo $rows['rating']; ?></td>
                     <td><?php echo $rows['amenities']; ?></td>
                     <td><?php echo $rows['offers']; ?></td>
                     <td><?php echo $rows['image']; ?></td>
+                    <td><?php echo $rows['website']; ?></td>
+                    <td><?php echo $rows['min_price']; ?></td>
+                    <td><?php echo $rows['max_price']; ?></td>
+
+
+
+
 
 
                     <td>
-                      <a class='btn btn-primary' href="edit_properties.php?property_id<=?php <?php echo $rows['property_id'] ?>">Edit</a>
-                      <a class='btn btn-danger' href="properties_view.php?del=<?php echo $rows['property_id']; ?>">Delete</a>
+                      <a class='btn btn-primary' href="#">Edit</a>
+                      <a class='btn btn-danger' href="hotelier.php?del=<?php echo $rows['hotel_id']; ?>">Delete</a>
                     </td>
                   </tr>
                   <?php } ?>

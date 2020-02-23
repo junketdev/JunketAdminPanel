@@ -1,7 +1,7 @@
 <?php 
   //include "header.php";
   //include "menu.php";
-  $comp_id = 503;
+  $comp_id = "C01";
   $sql    = "SELECT * FROM complain where comp_id = '" . $comp_id . "'" ;
   $conn= mysqli_connect("localhost", "root", "", "junketdb");
   $result = mysqli_query($conn,$sql);
@@ -40,7 +40,7 @@
                 <div class="table-responsive">
                       -->
 
-
+                  <H1>HOTEL FEEDBACK :</H1>
                   <table class="table table-hover" border="5">
                   <tr style="color:blue">
                     

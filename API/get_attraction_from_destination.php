@@ -2,7 +2,10 @@
 
 require "connect.php";
 $data=json_decode(file_get_contents('PHP://input'),true);
-$result="SELECT * FROM questionnaire ";
+
+$dest_id=$data['dest_id'];
+$result="SELECT * FROM attraction where dest_id='" . $dest_id ."'";
+
 $res1=mysqli_query($conn,$result);
 $value=array();
 
