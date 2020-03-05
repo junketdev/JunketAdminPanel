@@ -1,0 +1,73 @@
+implementation 'com.sasidhar.smaps.payumoney:payumoney:0.0.3'
+
+void initPayUMoney() {
+
+        transaction_id = System.currentTimeMillis() + "_" + allSharedPrefernces.getCustomerId();
+        HashMap<String, String> params = new HashMap<>();
+        params.put(PayUMoney_Constants.KEY, "rjQUPktU");
+        params.put(PayUMoney_Constants.TXN_ID, transaction_id);
+        params.put(PayUMoney_Constants.AMOUNT, String.valueOf(totalamount));
+        params.put(PayUMoney_Constants.PRODUCT_INFO, "Generate Pass");
+        params.put(PayUMoney_Constants.FIRST_NAME, travellernames.get(0).split("\\(")[0]);
+        params.put(PayUMoney_Constants.EMAIL, edtEmail.getText().toString());
+        params.put(PayUMoney_Constants.PHONE, edtPhoneNumber.getText().toString());
+
+/*        params.put(PayUMoney_Constants.SURL, "http://delta9.in/success.php");
+        params.put(PayUMoney_Constants.FURL, "http://delta9.in/fail.php");*/
+
+        params.put(PayUMoney_Constants.SURL, "https://www.payumoney.com/mobileapp/payumoney/success.php");
+        params.put(PayUMoney_Constants.FURL, "https://www.payumoney.com/mobileapp/payumoney/failure.php");
+        params.put(PayUMoney_Constants.UDF1, "");
+        params.put(PayUMoney_Constants.UDF2, "");
+        params.put(PayUMoney_Constants.UDF3, "");
+        params.put(PayUMoney_Constants.UDF4, "");
+        params.put(PayUMoney_Constants.UDF5, "");
+
+        String hash = com.sasidhar.smaps.payumoney.Utils.generateHash(params, "e5iIg1jwi8");
+
+        params.put(PayUMoney_Constants.HASH, hash);
+        params.put(PayUMoney_Constants.SERVICE_PROVIDER, "payu_paisa");
+
+        Intent intent = new Intent(this, MakePaymentActivity.class);
+        intent.putExtra(PayUMoney_Constants.ENVIRONMENT, PayUMoney_Constants.ENV_DEV);
+        intent.putExtra(PayUMoney_Constants.PARAMS, params);
+
+        startActivityForResult(intent, PayUMoney_Constants.PAYMENT_REQUEST);
+    }
+
+
+
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == PayUMoney_Constants.PAYMENT_REQUEST) {
+        switch (resultCode) {
+            case RESULT_OK:
+                Toast.makeText(TravellerActivity.this, "Payment Successful", Toast.LENGTH_SHORT).show();
+
+               //Call API here for adding payment details in DB
+
+                break;
+            case RESULT_CANCELED:
+                Toast.makeText(TravellerActivity.this, "Payment Unsuccessful", Toast.LENGTH_SHORT).show();
+
+                break;
+        }
+
+    }
+}
+
+
+********************************* TEST CREDENTIALS ********************************
+MID : 4934580
+Key : rjQUPktU
+Salt : e5iIg1jwi8
+
+
+Card No - 5123 4567 8901 2346
+Expiry - 05/2020
+CVV - 123
+
+payment_id,user_id, booking_id, trans_id, payment_amount, payment_date,payment_time, payment_status
