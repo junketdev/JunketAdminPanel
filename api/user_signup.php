@@ -21,12 +21,13 @@ if (mysqli_num_rows($res) > 0) {
 
 	$output["response"]=0;
 	$output["id"]=0;
-	$output["message"] = "Email is already exist.";
+	$output["message"] = "Email is already existing.";
 
     }
          else {
 
 		$sql_query = "INSERT INTO user_info(user_name, user_password, email, contact_no, dob, gender, profile_pic) VALUES('".$user_name."','".$user_password."','".$email."','".$contact_no."', '".$dob."', '".$gender."', '".$profile_pic."')";
+3
 		if(mysqli_query($conn,$sql_query))
 		{
 			$output["response"]=1;

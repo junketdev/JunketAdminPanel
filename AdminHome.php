@@ -20,14 +20,16 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="home.html" class="simple-text">
-                        Your Project Name
+                        <b><H2>
+                        J U N K E T
+                    </H2></b>
                     </a>
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home.html">
+                        <a class="nav-link" href="questionnaire_view.php">
                             <i class="fa fa-dashboard"></i>
-                            <p>Dashboard</p>
+                            <p>Questionnaire</p>
                         </a>
                     </li>
                     <li>
@@ -37,19 +39,27 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="inquirydetails.php">
                             <i class="fa fa-bell"></i>
-                            <p>Manage Complain</p>
+                            <p>Manage Inquiry</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="booking_view.php">
                             <i class="fa fa-heart"></i>
-                            <p>Manage Products</p>
+                            <p>Manage Bookings</p>
                         </a>
                     </li>
+
                     <li>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="hotelier.php">
+                            <i class="fa fa-heart"></i>
+                            <p>Manage Hotelier</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="Logout.php">
                             <i class="fa fa-lock"></i>
                             <p>Logout</p>
                         </a>
@@ -60,7 +70,7 @@
         <div class="main-panel">
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class=" container-fluid  ">
-                    <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                    <a class="navbar-brand" href="AdminHome.php"> Dashboard </a>
                     <button href="#" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -72,13 +82,20 @@
                             
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="no-icon">User Name</span>
+                                    <span class="no-icon">
+                                        <?php
+                                        session_start();
+                                        $username = $_SESSION['adlogin'];
+                                        echo $username;
+                                        ?>
+
+                                    </span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="#">Update Profile</a>
                                     <a class="dropdown-item" href="#">Update Password</a>
                                     <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">Logout</a>
+                                    <a class="dropdown-item" href="logout.php">Logout</a>
                                 </div>
                             </li>
                         </ul>
@@ -97,12 +114,12 @@
                                     <i class="fa fa-users"></i>
                                 </div>
                                 <div class="dbox__body">
-                                    <span class="dbox__count">8,252</span>
+                                    <span class="dbox__count">03</span>
                                     <span class="dbox__title">Manage Users</span>
                                 </div>
                                 
                                 <div class="dbox__action">
-                                    <a href="users_list.html" class="dbox__action__btn">More Info</a>
+                                    <a href="user_view.php" class="dbox__action__btn">More Info</a>
                                 </div>              
                             </div>
                         </div>
@@ -112,12 +129,12 @@
                                     <i class="fa fa-bell"></i>
                                 </div>
                                 <div class="dbox__body">
-                                    <span class="dbox__count">100</span>
+                                    <span class="dbox__count">001</span>
                                     <span class="dbox__title">Manage Complain</span>
                                 </div>
                                 
                                 <div class="dbox__action">
-                                    <a href="" class="dbox__action__btn">More Info</a>
+                                    <a href="inquirydetails.php" class="dbox__action__btn">More Info</a>
                                 </div>              
                             </div>
                         </div>
@@ -127,12 +144,12 @@
                                     <i class="fa fa-heart"></i>
                                 </div>
                                 <div class="dbox__body">
-                                    <span class="dbox__count">2502</span>
-                                    <span class="dbox__title">Manage Products</span>
+                                    <span class="dbox__count">8</span>
+                                    <span class="dbox__title">Manage Bookings</span>
                                 </div>
                                 
                                 <div class="dbox__action">
-                                    <a href="" class="dbox__action__btn">More Info</a>
+                                    <a href="booking_view.php" class="dbox__action__btn">More Info</a>
                                 </div>              
                             </div>
                         </div>
@@ -149,7 +166,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            <a href="">Your Project Name</a>, made with love from Divyang Sodha
+                            <a href="">Junket</a>, made with love from Nirmal,Urvish,Prem & Vaibhavi
                         </p>
                     </nav>
                 </div>

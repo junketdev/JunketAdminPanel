@@ -1,33 +1,3 @@
-<?php 
-  //include "header.php";
-  //include "menu.php";
-  $comp_id = "C01";
-  $sql    = "SELECT * FROM complain where comp_id = '" . $comp_id . "'" ;
-  $conn= mysqli_connect("localhost", "root", "", "junketdb");
-  $result = mysqli_query($conn,$sql);
-  
-  // Auto Increment Serial No variable.
-  $count  = 0;
-  
-  
-  // Delete Query If click the delete button then check using isset() method.
-  if (isset($_REQUEST['del']))
-  {
-    $delete1="DELETE FROM complain WHERE  
-    comp_id='".$_REQUEST['del']."' " ;
-    $del_resut1 = mysqli_query($conn,$delete1);
-
-
-?>
-  <script type="text/javascript">window.location.href="hotelfeedback.php"</script>
-<?php
-  }
-  
-?>
-
-
-
-<!--CSS DESIGN-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -137,65 +107,65 @@
                 </div>
             </nav>
             <!-- End Navbar -->
-             <div class="content">
+
+
+            <div class="content">
                 <div class="container-fluid">
-                  <b>Hotel Feedback</b>
-                  <br/>
-
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="dbox dbox--color-1">
+                                <div class="dbox__icon">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <div class="dbox__body">
+                                    <span class="dbox__count">4.2</span>
+                                    <span class="dbox__title">Average Rating</span>
+                                </div>
+                                
+                                <div class="dbox__action">
+                                    <a href="roomlisting.php" class="dbox__action__btn">More Info</a>
+                                </div>              
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dbox dbox--color-2">
+                                <div class="dbox__icon">
+                                    <i class="fa fa-bell"></i>
+                                </div>
+                                <div class="dbox__body">
+                                    <span class="dbox__count">001</span>
+                                    <span class="dbox__title">Manage Complain</span>
+                                </div>
+                                
+                                <div class="dbox__action">
+                                    <a href="hotelfeedback.php" class="dbox__action__btn">More Info</a>
+                                </div>              
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dbox dbox--color-3">
+                                <div class="dbox__icon">
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                                <div class="dbox__body">
+                                    <span class="dbox__count">03</span>
+                                    <span class="dbox__title">Total Bookings</span>
+                                </div>
+                                
+                                <div class="dbox__action">
+                                    <a href="booking_view.php" class="dbox__action__btn">More Info</a>
+                                </div>              
+                            </div>
+                        </div>
 
-           
 
-
-        <!--END OF PART 1 OF CSS--> 
-
-                 
-                  <table class="table table-hover" border="5">
-                  <tr style="color:blue">
-                    
-                    <th>Complain Id</th>
-                    <th>User Id</th>
-                    <th>Date</th>
-                    <th>Details</th>
-                    <th>Status </th>
-                    <th>Type </th>
-                    <th>Action </th>
-
-
-                    
-
-                  </tr>
-                  <?php 
-                    //Fetch all data using this function in while loop.
-                    while ($rows=mysqli_fetch_array($result,MYSQLI_BOTH)) 
-                    {
-                  ?>
-                  <tr>
-                    <td><?php echo $rows['comp_id']; ?></td>
-                    <td><?php echo $rows['user_id']; ?></td>
-                    <td><?php echo $rows['comp_date']; ?></td>
-                    <td><?php echo $rows['comp_detail']; ?></td>
-                    <td><?php echo $rows['comp_status']; ?></td>
-                    <td><?php echo $rows['comp_type']; ?></td>
-                    
-                    <td>
-                     
-                      <a class='btn btn-danger' href="hotelfeedback.php?del=<?php echo $rows['comp_id']; ?>">Delete</a>
-                    </td>
-                  </tr>
-                  <?php 
-                    } 
-                  ?>
-                  </table>
-
-               
-<!--
-                   CSS DESIGN
-                  -->
-                  </div>
+                        <!--end of part one-->
+                        
+                    </div>
                 </div>
-             </div>
+            </div>
             
+
             <footer class="footer">
                 <div class="container">
                     <nav>
@@ -220,4 +190,3 @@
 <script src="assets/js/light-bootstrap-dashboard790f.js?v=2.0.1" type="text/javascript"></script>
 <script src="assets/js/demo.js"></script>
 </html>
-
