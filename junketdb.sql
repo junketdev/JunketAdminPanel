@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 02, 2020 at 07:47 AM
+-- Generation Time: Apr 02, 2020 at 10:32 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.16
 
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `totalrooms` varchar(255) NOT NULL,
   `srno` int(12) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`srno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `booking`
@@ -175,7 +175,8 @@ INSERT INTO `booking` (`booking_id`, `hotel_id`, `room_id`, `user_id`, `user_nam
 ('B005', 'H01', 'R303', 'U5005', '', 'Manali', '9427505002', 'nirmal.dmpatel@gmail.com', '5200', '240', '5440', '28-02-2020', '03-03-2020', '5', '1', '4', '3', 3),
 ('B005', 'H01', 'R303', 'U5005', 'nirmal', 'Manali', '9427505002', 'nirmal.dmpatel@gmail.com', '5200', '240', '5440', '28-02-2020', '03-03-2020', '5', '1', '4', '3', 4),
 ('B005', 'H01', 'R303', 'U5005', 'nirmal', 'Manali', '9427505002', 'nirmal.dmpatel@gmail.com', '5200', '240', '5440', '28-02-2020', '03-03-2020', '5', '1', '4', '3', 5),
-('B1321583630', '7', 'R105', '3', 'Gautam', 'Goa', '6585689801', 'g@gmaul.com', '88800.0', '8880.0', '97680.0', '2020-04-05', '2020-04-08', '6', '2', '3', '4', 6);
+('B1321583630', '7', 'R105', '3', 'Gautam', 'Goa', '6585689801', 'g@gmaul.com', '88800.0', '8880.0', '97680.0', '2020-04-05', '2020-04-08', '6', '2', '3', '4', 6),
+('B1417150140', '53', '5302', '6', 'Nirmal', 'Vadodara', '8160319212', 'nirmal.dmpatel2198@gmail.com', '8588.0', '858.8000000000001', '9446.8', '2020-04-03', '2020-04-05', '2', '0', '2', '1', 7);
 
 -- --------------------------------------------------------
 
@@ -229,15 +230,15 @@ CREATE TABLE IF NOT EXISTS `destination` (
 --
 
 INSERT INTO `destination` (`dest_id`, `dest_name`, `description`, `latitude`, `longitude`, `images`, `tag`) VALUES
-(1, 'Udaipur', 'A top notch place for people who love to get lost amidst ancient folks.', '24.5854° N', '73.7125° E', 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Evening_view%2C_City_Palace%2C_Udaipur.jpg', 'Fort and Palaces,8-12 days,5000-12000,Cultural walk-for museums,Family Trip'),
+(1, 'Udaipur', 'A top notch place for people who love to get lost amidst ancient folks.', '24.5854° N', '73.7125° E', 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Evening_view%2C_City_Palace%2C_Udaipur.jpg', 'Fort and Palaces,3-7 days,2000-5000,Cultural walk-for museums,Family trip'),
 (2, 'Goa', 'Perfect place to enjoy with friends', '15.2993° N', '74.1240° E', 'https://www.cleartrip.com/collections/wp-content/uploads/2018/04/top-10-tourist-places-goa-header.jpg', 'Beach Side,3-7 days,less than 2000,Shopping,Friends Trip'),
 (3, 'Diu', 'A perfect destination to enjoy.', '20.7144° N', '70.9874° E', 'https://cdn1.goibibo.com/india-daman-and-diu-147794617398o.jpg', 'Beach Side,3-7 days,less than 2000,Shopping,Friends Trip'),
 (4, 'Manali', 'A place for romantic trips.', '32.2432° N', '77.1892° E', 'https://www.holidify.com/images/bgImages/MANALI.jpg', 'Hill station,3-7 days,5000-12000, Adventure & Hiking, Romantic trip'),
 (5, 'Ooty\r\n', 'A perfect place for nature lovers. Known as Queen of the Nilgiris. ', '11.4131° N', '76.6960° E', 'https://www.holidify.com/images/bgImages/OOTY.jpg', 'Hill Station,3-7 days,more than 12000,Shopping,Family Trip'),
 (6, 'Darjeeling\r\n', 'A place for nature and serenity lovers.', '27.0410° N', '88.2663° E', 'https://www.holidify.com/images/bgImages/DARJEELING.jpg', 'Hill station,3-7 days,more than 12000,Shopping,Romantic trip'),
 (7, 'Leh Ladakh\r\n', 'A place for Romantic trip.', '34.1526° N', '77.5771° E', 'https://www.holidify.com/images/bgImages/LADAKH.jpg', 'Hill Station,3-7 days,more than 12000,Adventure & Hiking, Romantic trip'),
-(8, 'Mysore', 'Perfect place to enjoy nature with family', '12.2958° N', '76.6394° E', 'https://www.holidify.com/images/bgImages/MYSORE.jpg', 'Fort and Palaces,3-7 days,5000-12000,Cultural walk -for museums,Family Trip'),
-(9, 'Jaipur', 'Known as the Pink City, it is place for heritage and culture lovers.', '26.9124° N', '75.7873° E', 'https://www.holidify.com/images/bgImages/JAIPUR.jpg', 'Fort and Palaces,3-7 days,2000-5000,Cultural walk -for museums,Family trip'),
+(8, 'Mysore', 'Perfect place to enjoy nature with family', '12.2958° N', '76.6394° E', 'https://www.holidify.com/images/bgImages/MYSORE.jpg', 'Fort and Palaces,3-7 days,5000-12000,Cultural walk-for museums,Family Trip'),
+(9, 'Jaipur', 'Known as the Pink City, it is place for heritage and culture lovers.', '26.9124° N', '75.7873° E', 'https://www.holidify.com/images/bgImages/JAIPUR.jpg', 'Fort and Palaces,3-7 days,2000-5000,Cultural walk-for museums,Family trip'),
 (10, 'Jaisalmer\r\n', 'Place for history and culture lovers.', '26.9157° N', '70.9083° E', 'https://www.holidify.com/images/bgImages/JAISALMER.jpg', 'Fort and Palaces,3-7 days,2000-5000,Cultural walk -for museums,Family trip'),
 (11, 'Andaman & Nicobar', 'A perfect place for beach lovers.', '11.7401° N', '92.6586° E', 'https://seoimgak.mmtcdn.com/blog/sites/default/files/images/havelock-beach-holiday.jpg', 'Beach Side,3-7 days,8000-12000,Adventure & Hiking,Friends Trip'),
 (12, 'Kerala', 'Known as God''s Own Country is a place for perfect family trip.', '10.8505° N', '76.2711° E', 'https://www.holidify.com/images/bgImages/ALLEPPEY.jpg', 'Beach Side,3-7 days,2000-5000,Shopping,Family Trip'),
@@ -245,7 +246,7 @@ INSERT INTO `destination` (`dest_id`, `dest_name`, `description`, `latitude`, `l
 (14, 'Bandhavgarh National Park\r\n', 'Formerly a hunting ground for the Maharajas of Rewa, this National Park is world-renowned as a tiger reserve. ', '23.7224° N', '81.0242° E', 'https://www.holidify.com/images/bgImages/BANDHAVGARH-NATIONAL-PARK.jpg', 'Wildlife and Forest,3-7 days,2000-5000,Adventuure & Hiking,Solo Trip'),
 (15, 'Kaziranga National Park', 'It is home to largest population of One Horned Rhinoceros in the world.', '26.5775° N', '93.1711° E', 'https://www.holidify.com/images/compressed/3332.jpg?v=1.1', 'Wildlife and Forest,3-7 days,5000-12000 ,Adventure & Hiking,Solo Trip'),
 (16, 'Jim Corbett National Park', 'India’s best known wildlife parks, being Asia’s very first National Park.Besides tigers, there are Serow, Goral, Himalayan Tahr among other fascinating wild species.', '29.5300° N', '78.7747° E', 'https://www.holidify.com/images/compressed/85.jpg', 'Wildlife and Forest,less than 2 days,2000-5000,Adventure & Hiking,Solo Trip'),
-(17, 'Vadodara', ' Home to some of the most exemplary displays of architecture, Vadodara is a fitting memorial to Maratha leader Sayaji Rao Gaekwad III who had envisioned a dream to make this Big City an educational, industrial and commercial centre.', '22°19''23.3"N', '73°15''12.9"E', 'https://image3.mouthshut.com/images/imagesp/925814302s.jpg', 'Fort and Palaces,3-7 days,2000-5000,Cultural walk -for museums,Family trip');
+(17, 'Vadodara', ' Home to some of the most exemplary displays of architecture, Vadodara is a fitting memorial to Maratha leader Sayaji Rao Gaekwad III who had envisioned a dream to make this Big City an educational, industrial and commercial centre.', '22°19''23.3"N', '73°15''12.9"E', 'https://image3.mouthshut.com/images/imagesp/925814302s.jpg', 'Fort and Palaces,3-7 days,2000-5000,Cultural walk-for museums,Family trip');
 
 -- --------------------------------------------------------
 
@@ -391,7 +392,7 @@ CREATE TABLE IF NOT EXISTS `payment` (
   `payment_time` varchar(255) NOT NULL,
   `payment_status` varchar(255) NOT NULL,
   PRIMARY KEY (`payment_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `payment`
@@ -401,7 +402,8 @@ INSERT INTO `payment` (`payment_id`, `user_id`, `booking_id`, `transaction_id`, 
 (1, 'U5005', 'B005', '', '5440', '', '', ''),
 (2, 'U5005', 'B005', '', '5440', '', '', ''),
 (3, 'U5005', 'B005', '1242575443', '5440', '02-03-2020', '12-45', 'paid'),
-(4, '3', 'B1321583630', '1583049063685_3', '97680.0', '2020-03-01', '01:21 PM', 'Paid');
+(4, '3', 'B1321583630', '1583049063685_3', '97680.0', '2020-03-01', '01:21 PM', 'Paid'),
+(5, '6', 'B1417150140', '1585817135455_6', '9446.8', '2020-04-02', '02:17 PM', 'Paid');
 
 -- --------------------------------------------------------
 
