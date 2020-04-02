@@ -1,4 +1,4 @@
-<?php
+l<?php
 
 require "connect.php";
 $data=json_decode(file_get_contents('PHP://input'),true);
